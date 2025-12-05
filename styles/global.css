@@ -19,5 +19,11 @@
     --title: 800 1.5rem/2rem var(--ff-main);
     --label: 600 1rem/1.25rem var(--ff-main);
     --p: 400 1rem/1.25rem var(--ff-main);
-    --p: 400 .875rem/1rem var(--ff-main);
+    --link: 400 .875rem/1rem var(--ff-main);
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 62px 0;
 }

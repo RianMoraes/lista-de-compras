@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras</title>
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -17,45 +18,47 @@
         <img src="assets/logo.png" alt="">
     </header>
     <main>
-        <div class="back">
-            <a href="#">
-                <img src="assets/icons/arrow-left-02-stroke-rounded.svg" alt="">
-                Voltar
-            </a>
-        </div>
-        <h1>Compras da semana</h1>
-        <div class="addItem">
-            <input type="text" placeholder="Adicione um novo item">
-            <button>
-                Adicionar item
-            </button>
-        </div>
-        <div class="items">
-            <div class="item">
-                <input type="checkbox" name="check" id="check">
-                <span>Pão de forma</span>
-                <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+        <div class="app">
+            <div class="back">
+                <a href="#">
+                    <img src="assets/icons/arrow-left-02-stroke-rounded.svg" alt="">
+                    Voltar
+                </a>
             </div>
-            <div class="item">
-                <input type="checkbox" name="check" id="check">
-                <span>Café preto</span>
-                <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+            <h1>Compras da semana</h1>
+            <div class="addItem">
+                <input type="text" placeholder="Adicione um novo item">
+                <button>
+                    Adicionar item
+                </button>
             </div>
-            <div class="item">
-                <input type="checkbox" name="check" id="check">
-                <span>Suco de laranja</span>
-                <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+            <div class="items">
+                <div class="item">
+                    <input type="checkbox" name="check" id="check">
+                    <span>Pão de forma</span>
+                    <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="check" id="check">
+                    <span>Café preto</span>
+                    <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="check" id="check">
+                    <span>Suco de laranja</span>
+                    <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="check" id="check">
+                    <span>Bolacha</span>
+                    <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+                </div>
             </div>
-            <div class="item">
-                <input type="checkbox" name="check" id="check">
-                <span>Bolacha</span>
-                <img src="assets/icons/lixeira.svg" alt="lixeira icon">
+            <div class="removed">
+                <img src="assets/icons/alerta.svg" alt="">
+                <span>O item foi removido da lista</span>
+                <img src="assets/icons/x.svg" alt="">
             </div>
-        </div>
-        <div class="removed">
-            <img src="assets/icons/alerta.svg" alt="">
-            <span>O item foi removido da lista</span>
-            <img src="assets/icons/x.svg" alt="">
         </div>
     </main>
     <script src="scripts"></script>
