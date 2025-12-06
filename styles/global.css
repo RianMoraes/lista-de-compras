@@ -196,13 +196,13 @@ main {
             font: var(--label);
             color: var(--always-white);
 
-            & img {
+            & svg {
                 width: 20px;
                 height: 20px;
 
             }
 
-            & img[src*="x"] {
+            & svg:last-child {
                 margin-left: auto;
             }
         }
