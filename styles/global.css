@@ -81,7 +81,6 @@ main {
             font: var(--p);
 
             input {
-                /* width: 296px; */
                 height: 44px;
                 padding: 0 16px;
                 border: 2px solid var(--border-primary);
@@ -92,10 +91,13 @@ main {
                 &::placeholder {
                     color: var(--content-tertiary);
                 }
+                &:hover {
+                    border-color: var(--border-hover);
+                }
 
                 &:focus {
                     outline: none;
-                    border-color: var(--border-hover);
+                    border-color: var(--color-brand);
                 }
             }
 
