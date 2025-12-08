@@ -204,6 +204,7 @@ main {
 
             & svg:last-child {
                 margin-left: auto;
+                cursor: pointer;
             }
         }
     }
