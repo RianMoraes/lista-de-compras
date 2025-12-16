@@ -207,5 +207,9 @@ main {
                 cursor: pointer;
             }
         }
+
+        .disable {
+            display: none;
+        }
     }
 }
