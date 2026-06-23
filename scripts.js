@@ -1,35 +1,67 @@
-const input = document.querySelector("input");
-const form = document.querySelector("form")
-const lista = document.getElementById("lista")
+"use strict"
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault()
-    lista.prepend(createItemLista())
-    input.value = ""
+const inputTarefa = document.querySelector('#addNewItem');
+const lista = document.querySelector('.items');
+const form = document.querySelector('.app')
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const textoTarefa = inputTarefa.value.trim();
+    // Validação: impede tarefas vazias
+    if (!textoTarefa) return;
+
+    criaTarefa(textoTarefa)
+    limpaInput()
 })
+//cria tarefa inclui o checkbox, a tarefa e o botão de deletar formatado
+function criaTarefa(texto) {
+    const item = document.createElement('div');
+    item.classList.add('item');
 
-function createItemLista() {
-    const divItemLista = document.createElement("div")
-    divItemLista.classList.add("item")
+    const check = document.createElement('input');
+    check.type = "checkbox";
+    check.classList.add('check-tarefa'); // Classe em vez de ID
 
-    const chkItemlista = document.createElement("input")
-    chkItemlista.type = "checkbox"
+    const tarefaItem = document.createElement('span');
+    tarefaItem.textContent = texto;
 
-    const spanItemContent = document.createElement("span")
-    spanItemContent.textContent = input.value
+    const deleteButton = document.createElement('img');
+    deleteButton.src = './assets/icons/lixeira.svg';
+    deleteButton.alt = "lixeira icon";
+    deleteButton.classList.add('btn-deletar'); // Classe para identificar no clique
 
-    const imgItemLista = document.createElement("img")
-    imgItemLista.src = "./assets/icons/lixeira.svg"
-    imgItemLista.alt = "lixeira icon"
+    item.append(check, tarefaItem, deleteButton);
+    lista.prepend(item); // Adiciona no topo da lista
 
-    divItemLista.append(chkItemlista, spanItemContent, imgItemLista)
-    return divItemLista
 }
-lista.addEventListener("click", (event) => {
-    const clickedElement = event.target
+function limpaInput() {
+    inputTarefa.value = ""
+    inputTarefa.focus()
+}
 
-    if (clickedElement.tagName === "IMG") {
-        const item = clickedElement.closest(".item")
-        item.remove()
+lista.addEventListener('click', (e) => {
+    const elementoClicado = e.target
+    const itemTarefa = elementoClicado.closest('.item')
+
+    if (!itemTarefa) return
+
+    if (elementoClicado.classList.contains('btn-deletar')) {
+        itemTarefa.remove()
     }
 })
+
+lista.addEventListener('change', (e) => {
+    const elementoClicado = e.target;
+    const itemTarefa = elementoClicado.closest('.item')
+
+    if (elementoClicado.classList.contains('check-tarefa')) {
+        itemTarefa.classList.toggle('marked')
+
+        if (itemTarefa.classList.contains('marked')) {
+            lista.append(itemTarefa)
+        } else {
+            lista.prepend(itemTarefa)
+        }
+    }
+})
+
